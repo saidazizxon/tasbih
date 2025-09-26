@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tasbih Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #d5d3d3;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+    #count {
+      font-size: 4em;
+      margin: 30px 0;
+    }
+
+    #reset {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1em;
+      padding: 8px 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #e74c3c;
+      color: white;
+      transition: background 0.3s;
+    }
+    #reset:hover {
+      background-color: #c0392b;
+    }
+
+    #clickBtn {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(145deg, #2e7d32, #66bb6a);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+    #clickBtn:hover {
+      transform: scale(1.05);
+    }
+    #clickBtn:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <button id="reset" onclick="resetCounter()">Reset</button>
+  <h1>Tasbih Counter</h1>
+  <div id="count">0</div>
+  <button id="clickBtn" onclick="increment()">Click</button>
+
+  <script>
+    let count = 0;
+    const countDisplay = document.getElementById("count");
+
+    function increment() {
+      count++;
+      countDisplay.textContent = count;
+    }
+
+    function resetCounter() {
+      count = 0;
+      countDisplay.textContent = count;
+    }
+  </script>
+</body>
+</html>
